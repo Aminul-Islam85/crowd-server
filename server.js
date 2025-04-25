@@ -8,7 +8,11 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: "https://crowdcube-f70c8.web.app", 
+    credentials: true
+  }));
+  
 app.use(express.json());
 app.use("/api/campaigns", campaignRoutes);
 
